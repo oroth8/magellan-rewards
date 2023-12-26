@@ -1,10 +1,73 @@
-require: rubocop-rails
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-minitest
 
 AllCops:
   NewCops: enable
-
+  DisabledByDefault: true
+  Exclude:
+    - "**/tmp/**/*"
+    - "**/vendor/**/*"
+    - "**/node_modules/**/*"
+    - "**/bin/bundle"
+Bundler/OrderedGems:
+  Enabled: true
+  AutoCorrect: true
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/LineLength:
+  Enabled: true
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Minitest:
+  Enabled: true
+Performance:
+  Enabled: true
+Security:
+  Enabled: true
+Style/AccessorGrouping:
+  Enabled: true
+Style/BisectedAttrAccessor:
+  Enabled: true
+Style/ClassAndModuleChildren:
+  Enabled: true
+  AutoCorrect: true
 Style/Documentation:
   Enabled: false
-
-Metrics/BlockLength:
-  Max: 50
+Style/FrozenStringLiteralComment:
+  Enabled: true
+Style/ExponentialNotation:
+  Enabled: true
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/HashSyntax:
+  Enabled: true
+Style/RedundantAssignment:
+  Enabled: true
+Style/RedundantFetchBlock:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
+Style/StringLiterals:
+  Enabled: true
+Rails:
+  Enabled: true
