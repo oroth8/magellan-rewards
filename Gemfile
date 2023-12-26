@@ -57,6 +57,8 @@ group :development, :test do
   
   gem 'pre-commit'
   gem 'rubocop'
+  
+  gem 'rubocop-capybara'
   gem 'rubocop-minitest'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
