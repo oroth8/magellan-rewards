@@ -1,0 +1,22 @@
+#!/bin/bash
+. "$(dirname "$0")/_/husky.sh"
+
+command_exists () {
+  command -v "$1" &> /dev/null ;
+}
+
+command_missing () {
+  ! command_exists "$1" ;
+}
+
+# avoid commits to main
+# branch=`git rev-parse --abbrev-ref HEAD`
+# if [[ "$branch" == "dev" && "$MAIN_MERGE" != 'true' ]]; then
+#   echo ""
+#   echo "You are on branch $branch. Are you sure you want to commit to this branch?"
+#   echo "If so, commit with MAIN_MERGE=true in environment."
+#   echo ""
+#   exit 1
+# fi
+
+bundle check && yarn lint:commit

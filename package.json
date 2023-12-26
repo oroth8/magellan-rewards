@@ -1,0 +1,31 @@
+{
+  "name": "magellan-rewards",
+  "version": "1.0.0",
+  "description": "Magellan Rewards Application",
+  "repository": "git@github.com:oroth8/magellan-rewards.git",
+  "author": "Owen Roth <rothowen27@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint:commit": "lint-staged --no-stash",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --ignore-unknown"
+    ],
+    "{*.rb,*.rbi,Dangerfile,Gemfile}": [
+      "bundle exec rubocop --force-exclusion --autocorrect --fail-level autocorrect"
+    ],
+    "db/migrate/*.rb": [
+      "bundle exec migration_signature check"
+    ],
+    "*.html.erb": [
+      "bundle exec erb-format --write"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  }
+}
