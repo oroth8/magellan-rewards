@@ -21,7 +21,7 @@
       "bundle exec migration_signature check"
     ],
     "*.html.erb": [
-      "bundle exec erb-format --write"
+      "bundle exec htmlbeautifier"
     ]
   },
   "devDependencies": {

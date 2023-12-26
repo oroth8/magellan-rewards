@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
   .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+    @apply rounded-md bg-magellan-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-magellan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-magellan-600;
+
+    &:disabled {
+      @apply bg-magellan-200 text-magellan-700 shadow-none cursor-not-allowed;
+    }
+  }
+
+  .btn-secondary {
+    @apply rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-inset ring-magellan-700 hover:bg-magellan-50;
+
+    &:disabled {
+      @apply bg-white text-magellan-700 shadow-none cursor-not-allowed;
+    }
   }
 }
-
-*/
