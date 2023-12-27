@@ -15,8 +15,12 @@
     <%# class="container mx-auto mt-28 px-5 flex" %>
     <main >
       <%= render 'shared/navbar' %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if alert %>
+        <%= tag.p alert, class: "bg-red-100 text-red-900 p-3 rounder"%>
+      <% end %>
+      <% if notice %>
+        <%= tag.p notice, class: "bg-green text-green-900 p-3 rounded" %>
+      <% end %>
       <%= yield %>
       <%= render 'shared/footer' %>
     </main>

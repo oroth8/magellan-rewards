@@ -4,7 +4,7 @@
       <div class="px-6 lg:px-0 lg:pr-4 lg:pt-4">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
           <p class="text-base font-semibold leading-7 text-text">Connecting the Magellan community</p>
-          <h1 class="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl uppercase">Magellan Rewards </h1>
+          <h1 class="mt-2 text-3xl font-bold tracking-wider  text-primary sm:text-4xl uppercase">Magellan Rewards </h1>
           <p class="mt-6 text-md leading-8 text-gray-600">The Magellan Rewards Program offers exclusive incentives and discounts to local businesses.</p>
           <p class="mt-6 text-md leading-8 text-gray-600"> Magellan residents & communities can take advantage of discounts from in-home-service providers, hotels, restaurants, fitness, health and wellness, pet care and much more.</p>
           <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
@@ -57,7 +57,7 @@
           <div class="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 sm:rounded-3xl" aria-hidden="true"></div>
         </div>
         <div class='py-8 text-center'>
-          <button class='btn-primary'>Join for free today!</button>
+          <%= link_to "Join for free today!", new_user_registration_path, class: "btn-primary" %>
         </div>
       </div>
     </div>

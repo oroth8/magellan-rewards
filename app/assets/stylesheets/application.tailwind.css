@@ -27,3 +27,7 @@
 .hint {
   @apply text-sm text-gray-500;
 }
+
+.error {
+  @apply text-sm text-red-500;
+}
