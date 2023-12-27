@@ -18,4 +18,12 @@
       @apply bg-white text-magellan-700 shadow-none cursor-not-allowed;
     }
   }
+
+  .btn-submit {
+    @apply w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-magellan-500 hover:bg-magellan-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+  }
+}
+
+.hint {
+  @apply text-sm text-gray-500;
 }

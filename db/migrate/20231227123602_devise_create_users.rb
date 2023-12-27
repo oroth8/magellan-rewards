@@ -1,4 +1,4 @@
-# migration_signature: de4587f55e7468ae8859d5a39cc879ff
+# migration_signature: d5f3c971f17d0990e9f6f9d60963d743
 # frozen_string_literal: true
 
 class DeviseCreateUsers < ActiveRecord::Migration[7.1]
@@ -17,10 +17,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
 
       ## Trackable
       t.integer  :sign_in_count, default: 0, null: false
-      # t.datetime :current_sign_in_at
+      t.datetime :current_sign_in_at
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
-      # t.string   :last_sign_in_ip
+      t.string   :last_sign_in_ip
 
       ## Confirmable
       t.string   :confirmation_token
