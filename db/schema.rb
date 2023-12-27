@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_27_202004) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_27_202758) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -26,6 +26,22 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_27_202004) do
     t.string 'name', default: '', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+  end
+
+  create_table 'partner_contact_details', force: :cascade do |t|
+    t.string 'phone'
+    t.string 'website'
+    t.string 'yelp'
+    t.string 'grubhub'
+    t.string 'doordash'
+    t.string 'twitter'
+    t.string 'linkedin'
+    t.string 'instagram'
+    t.string 'facebook'
+    t.bigint 'partner_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['partner_id'], name: 'index_partner_contact_details_on_partner_id'
   end
 
   create_table 'partners', force: :cascade do |t|
@@ -67,5 +83,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_27_202004) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
+  add_foreign_key 'partner_contact_details', 'partners'
   add_foreign_key 'partners', 'categories'
 end
