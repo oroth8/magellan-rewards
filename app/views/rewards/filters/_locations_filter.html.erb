@@ -1,0 +1,18 @@
+ <!--
+                  Entering: "transition ease-out duration-100"
+                    From: "transform opacity-0 scale-95"
+                    To: "transform opacity-100 scale-100"
+                  Leaving: "transition ease-in duration-75"
+                    From: "transform opacity-100 scale-100"
+                    To: "transform opacity-0 scale-95"
+                -->
+<div class="hidden absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-white p-4 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
+  <form class="space-y-4">
+    <%Location.all.each_with_index do |category, index| %>
+      <div class="flex items-center">
+        <input id=<%="filter=category-#{index}"%> name="category[]" value=<%= category.name %> type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+        <label for=<%="filter=category-#{index}"%> class="ml-3 whitespace-nowrap pr-6 text-sm font-medium text-gray-900"><%= category.name %></label>
+      </div>
+    <% end %>
+  </form>
+</div>
