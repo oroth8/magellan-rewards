@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_27_202758) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_27_203006) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -58,6 +58,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_27_202758) do
     t.index ['category_id'], name: 'index_partners_on_category_id'
   end
 
+  create_table 'promotions', force: :cascade do |t|
+    t.string 'name', default: '', null: false
+    t.text 'description'
+    t.bigint 'partner_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['partner_id'], name: 'index_promotions_on_partner_id'
+  end
+
   create_table 'users', force: :cascade do |t|
     t.string 'email', default: '', null: false
     t.string 'encrypted_password', default: '', null: false
@@ -85,4 +94,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_27_202758) do
 
   add_foreign_key 'partner_contact_details', 'partners'
   add_foreign_key 'partners', 'categories'
+  add_foreign_key 'promotions', 'partners'
 end
