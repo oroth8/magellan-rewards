@@ -16,6 +16,20 @@
                         input_html: { class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50', autocomplete: 'email' },
                         label_html: { class: 'block text-sm font-medium leading-6 text-gray-700' } %>
             </div>
+            <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+              <div class="col-span-1">
+                <%= f.input :first_name,
+                          autocomplete: "given-name",
+                          input_html: { class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50' },
+                          label_html: { class: 'block text-sm font-medium leading-6 text-gray-700' } %>
+              </div>
+              <div class="col-span-1">
+                <%= f.input :last_name,
+                          autocomplete: "family-name",
+                          input_html: { class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50' },
+                          label_html: { class: 'block text-sm font-medium leading-6 text-gray-700' } %>
+              </div>
+            </div>
             <div>
               <%= f.input :current_password,
                         input_html: { class: 'block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50', autocomplete: 'new-password' },
