@@ -12,6 +12,7 @@ AllCops:
     - "**/vendor/**/*"
     - "**/node_modules/**/*"
     - "**/bin/bundle"
+    - "**/config/initializers/devise.rb"
 Bundler/OrderedGems:
   Enabled: true
   AutoCorrect: true

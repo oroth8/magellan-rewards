@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MagellanRewards</title>
+    <title>Magellan Rewards</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="An application for local rewards, discounts, and information for the Magellan communities.">
+    <meta name="keywords" content="Magellan Rewards">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
@@ -13,6 +15,8 @@
     <%# class="container mx-auto mt-28 px-5 flex" %>
     <main >
       <%= render 'shared/navbar' %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
       <%= render 'shared/footer' %>
     </main>
